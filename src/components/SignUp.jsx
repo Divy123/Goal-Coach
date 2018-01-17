@@ -93,7 +93,15 @@ class SignUp extends Component {
                                 </button>
                             </div>
                             {
-                                (this.state.error.message !== '') ? alert(this.state.error.message) : <p></p>
+                                {
+                                    if(this.state.error.message !== '' && this.state.showError === true) {
+                                        alert(this.state.error.message);
+                                        let state = state;
+                                        this.setState({
+                                            showError: false
+                                        })
+                                    }
+                                }
                             }
                             <hr />
                             <p className = "signin-link"><Link to = {'/signin'} className = "link">Already a user ? Sign in instead</Link></p>
